@@ -14,7 +14,11 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -pthread
 INCLUDES = -I$(INC_DIR)
 
-SRC = src/main.c
+SRC = $(addprefix src/, main.c \
+						utils/ft_atoi.c \
+						utils/ft_atoui.c \
+						)
+
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 HEADER = inc/philo.h
 
@@ -25,6 +29,7 @@ $(NAME): $(LIBFT) $(OBJ)
 	@printf "\n$(GREEN)$(NAME) created$(RESET)\n"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER) | $(OBJ_DIR)
+	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 	@printf "\r$(ERASE)$(BLUE) compiled $(notdir $@)$(RESET)"
 
