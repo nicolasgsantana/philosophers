@@ -11,7 +11,7 @@ INC_DIR = inc
 OBJ_DIR = obj
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -pthread
 INCLUDES = -I$(INC_DIR)
 
 SRC = src/main.c
