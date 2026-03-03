@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:13:39 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/02 15:46:57 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/03 11:49:53 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,19 @@ int	main(int argc, char **argv)
 
 	if (argc == 5 || argc == 6)
 	{
+		if (check_args(argc, argv))
+			return (1);
 		init_philo(&philo, argc, argv);
 		printf("Number of philosophers = %d\n", philo.count);
 		printf("Time do die in ms = %u\n", philo.time_die);
 		printf("Time to eat in ms = %u\n", philo.time_eat);
 		printf("Time to sleep in ms = %u\n", philo.time_sleep);
 		printf("Number of times the philosophers must eat = %d\n", philo.times_must_eat);
+		return (0);
 	}
-	return (0);
+	else
+	{
+		ft_putstr_fd(ARGC_ERR, STDERR_FILENO);
+		return (1);
+	}
 }

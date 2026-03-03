@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 15:35:53 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/03 10:56:05 by nde-sant         ###   ########.fr       */
+/*   Created: 2026/03/03 09:55:22 by nde-sant          #+#    #+#             */
+/*   Updated: 2026/03/03 09:55:57 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static int	ft_isspace(int c)
+static size_t	ft_strlen(const char *str)
 {
-	return ((c >= 9 && c <= 13) || c == 32);
+	size_t	count;
+
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	return (count);
 }
 
-int	ft_atoi(const char *nptr)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int		i;
-	int		sign;
-	long	result;
-
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (ft_isdigit(nptr[i]))
-	{
-		result *= 10;
-		result += nptr[i] - '0';
-		i++;
-	}
-	return (result * sign);
+	write(fd, s, ft_strlen(s));
 }

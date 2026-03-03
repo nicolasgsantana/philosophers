@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 15:35:53 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/03 10:56:05 by nde-sant         ###   ########.fr       */
+/*   Created: 2026/03/03 11:48:23 by nde-sant          #+#    #+#             */
+/*   Updated: 2026/03/03 11:52:10 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static int	ft_isspace(int c)
+static int	is_valid_char(char c)
 {
-	return ((c >= 9 && c <= 13) || c == 32);
+	return (ft_isdigit(c) || (c == '-' || c == '+'));
 }
 
-int	ft_atoi(const char *nptr)
+int	check_args(int argc, char **argv)
 {
-	int		i;
-	int		sign;
-	long	result;
+	int	i;
+	int	j;
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	i = 1;
+	while (i < argc)
 	{
-		if (nptr[i] == '-')
-			sign *= -1;
+		j = 0;
+		while (argv[i][j])
+		{
+			if (!is_valid_char(argv[i][j]))
+			{
+				ft_putstr_fd(ARGV_ERR, STDERR_FILENO);
+				return (1);
+			}
+			j++;
+		}
 		i++;
 	}
-	while (ft_isdigit(nptr[i]))
-	{
-		result *= 10;
-		result += nptr[i] - '0';
-		i++;
-	}
-	return (result * sign);
+	return (0);
 }

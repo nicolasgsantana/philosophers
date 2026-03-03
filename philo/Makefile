@@ -15,8 +15,11 @@ CFLAGS = -Wall -Wextra -Werror -pthread
 INCLUDES = -I$(INC_DIR)
 
 SRC = $(addprefix src/, main.c \
+						check_args.c \
 						utils/ft_atoi.c \
 						utils/ft_atoui.c \
+						utils/ft_putstr_fd.c \
+						utils/ft_isdigit.c \
 						)
 
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
