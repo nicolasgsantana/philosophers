@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:13:39 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/02 15:46:57 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/03 10:35:15 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ int	main(int argc, char **argv)
 		printf("Time to eat in ms = %u\n", philo.time_eat);
 		printf("Time to sleep in ms = %u\n", philo.time_sleep);
 		printf("Number of times the philosophers must eat = %d\n", philo.times_must_eat);
+		return (0);
 	}
-	return (0);
+	else
+	{
+		ft_putstr_fd(ARGC_ERR, STDERR_FILENO);
+		return (1);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:14:21 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/03 09:56:44 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/03 10:39:02 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 # include <sys/time.h>
 # include <stdio.h>
 # include <unistd.h>
+
+# define ARGC_ERR "Error: Incorrect Usage\nUse:\n\
+./philo [number of philosophers] \
+[time_to_die](ms) [time_to_eat](ms) [time_to_sleep](ms) \
+[number_of_times_each_philosopher_must_eat](optional)\n"
 
 typedef struct s_philo
 {
