@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:14:21 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/03 10:39:02 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/03 10:55:57 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ typedef struct s_philo
 int				ft_atoi(const char *nptr);
 unsigned int	ft_atoui(const char *nptr);
 void			ft_putstr_fd(char *s, int fd);
+int				ft_isdigit(int c);
 
 #endif

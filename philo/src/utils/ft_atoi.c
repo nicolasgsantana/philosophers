@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:35:53 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/02 15:49:54 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/03 10:56:05 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 static int	ft_isspace(int c)
 {
 	return ((c >= 9 && c <= 13) || c == 32);
-}
-
-static int	ft_isdigit(int c)
-{
-	return (c >= 48 && c <= 57);
 }
 
 int	ft_atoi(const char *nptr)

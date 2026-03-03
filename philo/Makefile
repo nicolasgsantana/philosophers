@@ -18,6 +18,7 @@ SRC = $(addprefix src/, main.c \
 						utils/ft_atoi.c \
 						utils/ft_atoui.c \
 						utils/ft_putstr_fd.c \
+						utils/ft_isdigit.c \
 						)
 
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
