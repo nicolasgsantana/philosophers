@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 16:14:21 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/03 09:56:44 by nde-sant         ###   ########.fr       */
+/*   Created: 2026/03/03 09:55:22 by nde-sant          #+#    #+#             */
+/*   Updated: 2026/03/03 09:55:57 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-# define PHILO_H
+#include "philo.h"
 
-# include <pthread.h>
-# include <sys/time.h>
-# include <stdio.h>
-# include <unistd.h>
-
-typedef struct s_philo
+static size_t	ft_strlen(const char *str)
 {
-	int				count;
-	unsigned int	time_die;
-	unsigned int	time_eat;
-	unsigned int	time_sleep;
-	int				times_must_eat;
-}	t_philo;
+	size_t	count;
 
-int				ft_atoi(const char *nptr);
-unsigned int	ft_atoui(const char *nptr);
-void			ft_putstr_fd(char *s, int fd);
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	return (count);
+}
 
-#endif
+void	ft_putstr_fd(char *s, int fd)
+{
+	write(fd, s, ft_strlen(s));
+}
