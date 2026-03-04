@@ -23,7 +23,7 @@ SRC = $(addprefix src/, main.c \
 						)
 
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-HEADER = inc/philo.h
+HEADER = inc/philo.h inc/ft_err.h
 
 all: $(NAME)
 
