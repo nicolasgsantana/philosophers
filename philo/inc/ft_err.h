@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:19:08 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/04 12:28:26 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/04 17:52:09 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@
 # define EAT_TIME_ERR "Invalid time to eat\n"
 # define SLEEP_TIME_ERR "Invalid time to sleep\n"
 # define EAT_COUNT_ERR "Invalid number of times each philosopher must eat\n"
+# define MALLOC_ERR "Failed to allocate memory\n"
+# define INIT_ERR "Failed to init mutex\n"
 
 #endif
