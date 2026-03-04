@@ -16,6 +16,8 @@ INCLUDES = -I$(INC_DIR)
 
 SRC = $(addprefix src/, main.c \
 						check_args.c \
+						ft_msleep.c \
+						get_current_time.c \
 						utils/ft_atoi.c \
 						utils/ft_atoui.c \
 						utils/ft_putstr_fd.c \

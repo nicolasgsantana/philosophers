@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:14:21 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/04 12:36:15 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/04 12:38:21 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ unsigned int	ft_atoui(const char *nptr);
 void			ft_putstr_fd(char *s, int fd);
 int				ft_isdigit(int c);
 int				check_args(char **argv);
+void			ft_msleep(unsigned int miliseconds);
+unsigned int	get_current_time(void);
 
 #endif
