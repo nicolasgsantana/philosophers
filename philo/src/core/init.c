@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 16:13:39 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/04 18:51:40 by nde-sant         ###   ########.fr       */
+/*   Created: 2026/03/05 14:51:39 by nde-sant          #+#    #+#             */
+/*   Updated: 2026/03/05 14:58:01 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,30 +87,4 @@ void	init_philos(t_philo *philos, t_program *program, pthread_mutex_t *forks,
 			philos[i].l_fork = &forks[i - 1];
 		i++;
 	}
-}
-
-int	main(int argc, char **argv)
-{
-	t_program		program;
-	t_philo			*philos;
-	pthread_mutex_t	*forks;
-
-	if (argc != 5 && argc != 6)
-		return (ft_putstr_fd(ARGC_ERR, STDERR_FILENO), 1);
-	if (check_args(argv))
-		return (1);
-	philos = malloc(sizeof(t_philo) * ft_atoi(argv[1]));
-	forks = malloc(sizeof(pthread_mutex_t) * ft_atoi(argv[1]));
-	if (!philos || !forks)
-	{
-		free(philos);
-		free(forks);
-		return (ft_putstr_fd(MALLOC_ERR, STDERR_FILENO), 1);
-	}
-	if (init_program(&program, philos))
-		return (ft_putstr_fd(INIT_ERR, STDERR_FILENO), 1);
-	if (init_forks(forks, ft_atoi(argv[1])))
-		return (ft_putstr_fd(INIT_ERR, STDERR_FILENO), 1);
-	init_philos(philos, &program, forks, argv);
-	return (0);
 }

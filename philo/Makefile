@@ -11,13 +11,14 @@ INC_DIR = inc
 OBJ_DIR = obj
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -pthread
+CFLAGS = -Wall -Wextra -Werror -pthread -g
 INCLUDES = -I$(INC_DIR)
 
-SRC = $(addprefix src/, main.c \
-						check_args.c \
-						ft_msleep.c \
-						get_current_time.c \
+SRC = $(addprefix src/, core/main.c \
+						core/init.c \
+						core/check_args.c \
+						core/ft_msleep.c \
+						core/get_current_time.c \
 						utils/ft_atoi.c \
 						utils/ft_atoui.c \
 						utils/ft_putstr_fd.c \
