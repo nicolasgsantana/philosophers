@@ -19,6 +19,9 @@ SRC = $(addprefix src/, core/main.c \
 						core/check_args.c \
 						core/ft_msleep.c \
 						core/get_current_time.c \
+						core/ft_threads.c \
+						core/observer.c \
+						core/routine.c \
 						utils/ft_atoi.c \
 						utils/ft_atoui.c \
 						utils/ft_putstr_fd.c \

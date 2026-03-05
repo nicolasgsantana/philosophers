@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:13:39 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/05 15:34:24 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/05 16:28:32 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ int	main(int argc, char **argv)
 	if (init_forks(forks, program.num_of_philos))
 		return (ft_putstr_fd(INIT_ERR, STDERR_FILENO), 1);
 	init_philos(philos, &program, forks, argv);
+	if (thread_handler(&program))
+		return (1);
 	return (0);
 }

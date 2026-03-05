@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:14:21 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/05 15:39:05 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/05 16:30:34 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,14 @@ int				ft_isdigit(int c);
 int				check_args(char **argv);
 void			ft_msleep(unsigned int miliseconds);
 unsigned int	get_current_time(void);
-int				init_program(t_program *program, t_philo *philos, int philo_num);
+int				init_program(t_program *program, t_philo *philos,
+					int philo_num);
 int				init_forks(pthread_mutex_t *forks, int philo_num);
 void			init_input(t_philo *philo, char **argv);
 void			init_philos(t_philo *philos, t_program *program,
 					pthread_mutex_t *forks, char **argv);
+int				thread_handler(t_program *program);
+void			*watch(void *philos);
+void			*routine(void *param);
 
 #endif
