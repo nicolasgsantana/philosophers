@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:13:39 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/05 14:57:49 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/05 15:34:24 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	main(int argc, char **argv)
 		free(forks);
 		return (ft_putstr_fd(MALLOC_ERR, STDERR_FILENO), 1);
 	}
-	if (init_program(&program, philos))
+	if (init_program(&program, philos, ft_atoi(argv[1])))
 		return (ft_putstr_fd(INIT_ERR, STDERR_FILENO), 1);
-	if (init_forks(forks, ft_atoi(argv[1])))
+	if (init_forks(forks, program.num_of_philos))
 		return (ft_putstr_fd(INIT_ERR, STDERR_FILENO), 1);
 	init_philos(philos, &program, forks, argv);
 	return (0);

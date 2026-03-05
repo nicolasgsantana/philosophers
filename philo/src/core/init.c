@@ -6,16 +6,17 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 14:51:39 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/05 14:58:01 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/05 15:21:36 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	init_program(t_program *program, t_philo *philos)
+int	init_program(t_program *program, t_philo *philos, int philo_num)
 {
 	program->dead_flag = 0;
 	program->philos = philos;
+	program->num_of_philos = philo_num;
 	if (pthread_mutex_init(&program->write_lock, NULL))
 		return (1);
 	if (pthread_mutex_init(&program->dead_lock, NULL))
@@ -82,7 +83,7 @@ void	init_philos(t_philo *philos, t_program *program, pthread_mutex_t *forks,
 		philos[i].dead = &program->dead_flag;
 		philos[i].r_fork = &forks[i];
 		if (i == 0)
-			philos[i].l_fork = &forks[philos[i].num_of_philos - 1];
+			philos[i].l_fork = &forks[program->num_of_philos - 1];
 		else
 			philos[i].l_fork = &forks[i - 1];
 		i++;
