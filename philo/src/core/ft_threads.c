@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:00:31 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/05 16:27:11 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/05 21:06:19 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ static int	start_threads(t_program *program, pthread_t *observer)
 	int	i;
 	int	j;
 
-	if (pthread_create(observer, NULL, &watch, &program->philos))
+	if (pthread_create(observer, NULL, &watch, program))
 		return (1);
 	i = 0;
 	while (i < program->num_of_philos)
 	{
-		if (pthread_create(&program->philos[i].thread, NULL, &routine, NULL))
+		if (pthread_create(&program->philos[i].thread, NULL, &routine,
+				&program->philos[i]))
 		{
 			j = 0;
 			while (j < i)
