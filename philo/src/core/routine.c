@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:37:21 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/06 10:49:29 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/09 14:57:18 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ static void	eat(t_philo *philo)
 		ft_msleep(5);
 	pthread_mutex_lock(philo->r_fork);
 	print_action("has taken a fork", philo);
+	if (philo->l_fork == philo->r_fork)
+	{
+		ft_msleep(philo->time_to_die);
+		pthread_mutex_unlock(philo->r_fork);
+		return ;
+	}
 	pthread_mutex_lock(philo->l_fork);
 	print_action("has taken a fork", philo);
 	philo->eating = 1;
@@ -51,6 +57,13 @@ void	*routine(void *ptr)
 	while (everyone_alive(philo))
 	{
 		eat(philo);
+		pthread_mutex_lock(philo->meal_lock);
+		if (philo->meals_eaten >= philo->num_times_to_eat)
+		{
+			pthread_mutex_unlock(philo->meal_lock);
+			break ;
+		}
+		pthread_mutex_unlock(philo->meal_lock);
 		nap(philo);
 		think(philo);
 	}
