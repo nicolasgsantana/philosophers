@@ -41,6 +41,21 @@ philosophers have eaten at least `number_of_times_each_philosopher_must_eat`
 times, the simulation stops. If not specified, the simulation stops when a
 philosopher dies.  
 
+### Examples
+```bash
+./philo 5 800 200 200 10 
+```
+```bash
+./philo 4 410 200 100 10
+```
+
+### Output Explanation
+```
+>3800 2 is eating  
+  ┃   ┃    ┗ action being performed  
+  ┃   ┗ philosopher id  
+  ┗ time in milliseconds since program started  
+```
 
 ## Resources
 References used during development:
