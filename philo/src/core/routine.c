@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:37:21 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/09 14:57:18 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/09 16:24:11 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	nap(t_philo *philo)
 static void	eat(t_philo *philo)
 {
 	if (philo->id % 2 == 0)
-		ft_msleep(5);
+		ft_msleep(1);
 	pthread_mutex_lock(philo->r_fork);
 	print_action("has taken a fork", philo);
 	if (philo->l_fork == philo->r_fork)
