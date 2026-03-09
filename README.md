@@ -58,7 +58,7 @@ philosopher dies.
 ```
 
 ## Resources
-References used during development:
+Main references used during development:
 - [Unix Threads in C by CodeVault on Youtube](https://www.youtube.com/playlist?list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2)
 - [Deadlock article on Wikipedia](https://en.wikipedia.org/wiki/Deadlock_(computer_science))
 - [Race condition article on Wikipedia](https://en.wikipedia.org/wiki/Race_condition#Data_race)
