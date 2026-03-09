@@ -2,6 +2,7 @@
 
 ---
 
+
 ## Description
 The goal of this project is to create a version of the [dining philosophers problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem):
 
@@ -15,6 +16,7 @@ When a philosopher has finished eating, they put their forks back on the table a
 start sleeping. Once awake, they start thinking again. The simulation stops when
 a philosopher dies of starvation.
 
+
 ## Instructions
 Clone the repository and enter the folder:
 ```bash
@@ -27,17 +29,17 @@ make
 ./philo [number_of_philosophers] [time_to_die] [time_to_eat] [time_to_sleep] [number_of_times_each_philosopher_must_eat]
 ```
 ### Info
-`number_of_philosophers` = number of philosophers and forks at the table
-`time_to_die (in milliseconds)` = If a philosopher has not started eating within
+`number_of_philosophers` = number of philosophers and forks at the table  
+`time_to_die (in milliseconds)` = If a philosopher has not started eating within  
 `time_to_die` milliseconds since the start of their last meal or the start of the
-simulation, they die.
+simulation, they die.  
 `time_to_eat (in milliseconds)` = The time it takes for a philosopher to eat.
-During that time, they will need to hold two forks.
-`time_to_sleep (in milliseconds)` = The time a philosopher will spend sleeping.
+During that time, they will need to hold two forks.  
+`time_to_sleep (in milliseconds)` = The time a philosopher will spend sleeping.  
 `number_of_times_each_philosopher_must_eat (optional argument)` = If all
 philosophers have eaten at least `number_of_times_each_philosopher_must_eat`
 times, the simulation stops. If not specified, the simulation stops when a
-philosopher dies.
+philosopher dies.  
 
 
 ## Resources
@@ -47,4 +49,4 @@ References used during development:
 - [Race condition article on Wikipedia](https://en.wikipedia.org/wiki/Race_condition#Data_race)
 - AI was used for:
     - Research
-    - Help with manual tests
+    - Manual tests
