@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:14:21 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/05 20:55:54 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/09 15:15:02 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,7 @@ void			*watch(void *philos);
 void			*routine(void *param);
 void			print_action(char *msg, t_philo *philo);
 int				everyone_alive(t_philo *philo);
+void			free_all(t_program *program, t_philo *philos,
+					pthread_mutex_t *forks);
 
 #endif

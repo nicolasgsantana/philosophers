@@ -24,6 +24,7 @@ SRC = $(addprefix src/, core/main.c \
 						core/routine.c \
 						core/print_action.c \
 						core/everyone_alive.c \
+						core/free_all.c \
 						utils/ft_atoi.c \
 						utils/ft_atoui.c \
 						utils/ft_putstr_fd.c \

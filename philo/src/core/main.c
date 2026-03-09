@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:13:39 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/05 16:28:32 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/09 15:34:47 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int	main(int argc, char **argv)
 	init_philos(philos, &program, forks, argv);
 	if (thread_handler(&program))
 		return (1);
+	free_all(&program, philos, forks);
 	return (0);
 }
