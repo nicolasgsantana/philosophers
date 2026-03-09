@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 12:19:08 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/05 15:10:23 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/09 19:50:03 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_ERR_H
 
 # define ARGC_ERR "Error: Incorrect Usage\nUse:\n\
-./philo [number of philosophers] \
+./philo [number_of_philosophers] \
 [time_to_die](ms) [time_to_eat](ms) [time_to_sleep](ms) \
 [number_of_times_each_philosopher_must_eat](optional)\n"
 # define N_PHILO_ERR "Invalid number of philosophers\n"
