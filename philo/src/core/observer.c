@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:06:36 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/09 14:51:51 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/09 15:14:14 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static int	is_philo_dead(t_philo *philo)
 {
 	pthread_mutex_lock(philo->meal_lock);
-	if (get_current_time() - philo->last_meal >= philo->time_to_die &&
-			!philo->eating)
+	if (get_current_time() - philo->last_meal >= philo->time_to_die
+		&& !philo->eating)
 	{
 		pthread_mutex_unlock(philo->meal_lock);
 		return (1);
@@ -50,7 +50,6 @@ static int	has_eaten_enough(t_philo *philo)
 	pthread_mutex_lock(philo->meal_lock);
 	if (philo->meals_eaten >= philo->num_times_to_eat)
 	{
-		
 		pthread_mutex_unlock(philo->meal_lock);
 		return (1);
 	}
