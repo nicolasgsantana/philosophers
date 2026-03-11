@@ -4,7 +4,7 @@
 
 
 ## Description
-The goal of this project is to create a version of the [dining philosophers problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem):
+The goal of this project is to create a version of the [dining philosophers problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem) using multi threading in C, philosophers being represented as [threads](https://en.wikipedia.org/wiki/Thread_(computing)) and forks as [mutexes](https://en.wikipedia.org/wiki/Mutual_exclusion).
 
 One or more philosophers sit at a round table with a large bowl of spaghetti in the middle.
 
@@ -62,6 +62,7 @@ Main references used during development:
 - [Unix Threads in C by CodeVault on Youtube](https://www.youtube.com/playlist?list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2)
 - [Deadlock article on Wikipedia](https://en.wikipedia.org/wiki/Deadlock_(computer_science))
 - [Race condition article on Wikipedia](https://en.wikipedia.org/wiki/Race_condition#Data_race)
+- [Philosophers 42 Guide— “The Dining Philosophers Problem”](https://medium.com/@ruinadd/philosophers-42-guide-the-dining-philosophers-problem-893a24bc0fe2)
 - AI was used for:
     - Research
     - Manual tests
