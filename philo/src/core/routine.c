@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:37:21 by nde-sant          #+#    #+#             */
-/*   Updated: 2026/03/09 16:24:11 by nde-sant         ###   ########.fr       */
+/*   Updated: 2026/03/11 15:30:54 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ void	*routine(void *ptr)
 	{
 		eat(philo);
 		pthread_mutex_lock(philo->meal_lock);
-		if (philo->meals_eaten >= philo->num_times_to_eat)
+		if (philo->meals_eaten >= philo->num_times_to_eat
+			&& philo->num_times_to_eat != -1)
 		{
 			pthread_mutex_unlock(philo->meal_lock);
 			break ;
