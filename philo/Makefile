@@ -11,7 +11,7 @@ INC_DIR = inc
 OBJ_DIR = obj
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -pthread -g
+CFLAGS = -Wall -Wextra -Werror -pthread
 INCLUDES = -I$(INC_DIR)
 
 SRC = $(addprefix src/, core/main.c \
